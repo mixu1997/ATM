@@ -1,11 +1,13 @@
 import java.util.Scanner;
 public class Entry{
-		long zhanghao=370120180104L;
+		String zhanghao="370120180104";
 		long mima=123456;
 		public void Login(User user){
+			while(true){
 			Scanner sr=new Scanner(System.in);
 			System.out.println("qingshuruzhanghao:");
-			long zh=sr.nextLong();
+			String zh=sr.next();
+			if(zh.length()==12){
 			System.out.println("qingshurumima:");
 			long mm=sr.nextLong();
 			if(zh==zhanghao&&mm==mima){
@@ -16,9 +18,14 @@ public class Entry{
 				System.out.println("shuruyouwu,qingchongxiuchuru:");
 				Entry1 entry=new Entry1();
 				entry.Login(user);
-
-
 		}
+	}
+			else{
+				System.out.println("changduyouwu,qingchongxinshuru");
+				
+			}
+		}
+	
 		
 }
 }
