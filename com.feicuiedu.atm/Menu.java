@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class Menu{
 	public void carte(User user){
-		System.out.println("qingxuanzebanliyewu:");
-		System.out.println("1.chaxun");
-		System.out.println("2.zhuanzhang");
-		System.out.println("3.qukuan");
-		System.out.println("4.cunkuan");
-		System.out.println("5.tuichu");
+		System.out.println("请选择业务:");
+		System.out.println("1.查询");
+		System.out.println("2.转账");
+		System.out.println("3.取款");
+		System.out.println("4.存款");
+		System.out.println("5.退出");
+		System.out.println("6.交易流水");
 		Scanner sr=new Scanner(System.in);
 		int shuru=sr.nextInt();
 		if(shuru==1){
@@ -28,6 +29,10 @@ public class Menu{
         else if(shuru==5){
         	Entry entry=new Entry();
 				entry.Login(user);
+        }
+		 else if(shuru==6){
+        	Listing ls=new Listing();
+				ls.listing(user);
         }
 		
 	}

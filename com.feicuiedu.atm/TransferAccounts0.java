@@ -1,15 +1,15 @@
 import java.util.Scanner;
 public class TransferAccounts0{
 	public void transferAccounts(User user){
-		System.out.println("huanyingshiyongzhuanzhang:");
+		System.out.println("欢迎使用转账业务:");
 		Scanner sr=new Scanner(System.in);
-		System.out.println("qingshuruzhanghao:");
+		System.out.println("请输入账号:");
 		int param1=sr.nextInt();
-		System.out.println("qingshurujine:");
+		System.out.println("请输入金额:");
 		int param2=sr.nextInt();
-		System.out.println("1.queren");
-		System.out.println("2.chongxiushuru");
-		System.out.println("3.fanhuicaidan");
+		System.out.println("1.确认");
+		System.out.println("2.重新输入");
+		System.out.println("3.返回菜单");
 		int param3=sr.nextInt();
 		if(param3==1){
 
