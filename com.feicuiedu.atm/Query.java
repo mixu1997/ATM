@@ -10,14 +10,13 @@ public class Query{
 		System.out.println("2.ÍË³ö:");
 		Scanner sr=new Scanner(System.in);
 		int shuru=sr.nextInt();
-		if(shuru==1){
-			Menu menu=new Menu();
+			if(shuru==1){
+				Menu menu=new Menu();
 				menu.carte(user);
-		}
-		else if(shuru==2){
-			Entry entry=new Entry();
-			entry.Login(user);
-		}
-
+			}
+			else if(shuru==2){
+				Entry entry=new Entry();
+				entry.Login(user);
+			}
 	}
 }
