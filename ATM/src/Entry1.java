@@ -1,19 +1,24 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.text.SimpleDateFormat;
-import java.util.Scanner;
 import java.util.Date;
+import java.util.Map;
+import java.util.Scanner;
 public class Entry1{
 		
 		public void Login(User1 user){
+			try {
 			Scanner sr=new Scanner(System.in);
 			System.out.println("«Î ‰»Î’À∫≈:");
-			long zh=sr.nextLong();
+			String zh=sr.next();
 			System.out.println("«Î ‰»Î√‹¬Î:");
-			long mm=sr.nextLong();
-			long zh0=user.getZhanghao();
-			long mm0=user.getMima();
-			long zh1=user.getNumber1();
-			int mm1=user.getMm1();
-				if(zh==zh0&&mm==mm0||zh==zh1&&mm==mm1){
+			String mm=sr.next();
+			File file=new File("work"+File.separator+"account.txt");
+			ObjectInputStream ois= new ObjectInputStream(new FileInputStream(file));
+			Map<String,String> userMap=(Map<String,String>)ois.readObject();
+				if(zh.equals(userMap.get("’À∫≈"))&&mm.equals(userMap.get("√‹¬Î"))){
 					Date date=new Date();
 					SimpleDateFormat sp=new SimpleDateFormat("yyyyƒÍMM‘¬dd»’HH ±mm∑÷ss√Î");
 					String str=sp.format(date);
@@ -26,5 +31,12 @@ public class Entry1{
 					Entry entry=new Entry();
 					entry.Login(user);
 				}
+			}
+			catch(IOException e) {
+				e.printStackTrace();
+			}
+			catch(ClassNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
 }
